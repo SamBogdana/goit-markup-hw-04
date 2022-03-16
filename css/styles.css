@@ -6,6 +6,7 @@
   --title-text-color: #ffffff;
   --logo-primary: #000000;
   --footer-adress-color: rgba(255, 255, 255, 0.6);
+  --icon-main-color: #afb1b8;
 
   /* Цвет фона*/
   --bgd-dark: #2f303a;
@@ -13,6 +14,7 @@
   --bgd-secondary: #f5f4fa;
   --bgd-border: #eeeeee;
   --bgd-top-border: #ececec;
+  --bgd-icon-footer: #ffffff1a;
 
   /* Шрифти */
   --main-font: "Roboto", sans-serif;
@@ -148,9 +150,15 @@ img {
 }
 
 .contacts-item > .contacts-link {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.contacts-icon {
+  fill: currentColor;
+  margin-right: 10px;
 }
 
 /* Main */
@@ -159,6 +167,7 @@ img {
   padding-bottom: 200px;
   padding-top: 200px;
   text-align: center;
+  max-width: 1600px;
 
   background-image: linear-gradient(
       to right,
@@ -211,6 +220,16 @@ img {
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
+}
+
+.special-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  height: 120px;
+  background-color: var(--bgd-secondary);
+  margin-bottom: 30px;
 }
 
 .special-title {
@@ -267,6 +286,9 @@ img {
 
 .team-item {
   text-align: center;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-title {
@@ -295,33 +317,76 @@ img {
 
 .social-list {
   display: flex;
-  justify-content: space-between;
   padding: 0;
-  margin: 0;
-
-  outline: 1px solid black;
-}
-
-.social-item {
-  height: 44px;
-  width: 44px;
+  margin: 30px 32px 0 32px;
 }
 
 .social-link {
-  display: inline-block;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 44px;
   width: 44px;
+
+  color: var(--icon-main-color);
+  background-color: var(--bgd-main);
+  border-radius: 50%;
 }
 
 .social-icon {
-  display: block;
-  height: 44px;
-  width: 44px;
-  fill: red;
+  fill: currentColor;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--title-text-color);
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  fill: currentColor;
+}
+
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.clients-list {
+  display: flex;
+  padding: 0;
+}
+
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92px;
+  width: 170px;
+
+  color: var(--icon-main-color);
+  background-color: var(--bgd-main);
+  border-radius: 4px;
+  border: 1px solid var(--icon-main-color);
+}
+
+.clients-icon {
+  fill: currentColor;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.clients-icon:hover,
+.clients-icon:focus {
+  fill: currentColor;
+}
+
+.clients-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* Footer */
@@ -336,9 +401,16 @@ img {
   padding-bottom: 60px;
 }
 
-.container > .logo {
+.footer > .container {
+  display: flex;
+}
+.footer-address > .logo {
   display: block;
   margin-bottom: 20px;
+}
+
+.footer-address {
+  margin-right: 70px;
 }
 
 .address-item:not(:last-child) {
@@ -361,6 +433,36 @@ img {
 
 .address-list {
   display: block;
+}
+
+.footer-social {
+  padding-top: 12px;
+}
+
+.footer-social-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--title-text-color);
+
+  margin-bottom: 20px;
+}
+
+.footer-social .social-list {
+  margin: 0;
+}
+
+.footer-social .social-link {
+  color: var(--title-text-color);
+  background-color: var(--bgd-icon-footer);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--title-text-color);
 }
 
 /* Portfolio */
@@ -390,6 +492,8 @@ img {
   color: var(--title-text-color);
   background-color: var(--accent-color);
   border: 1px solid var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-list {
@@ -438,4 +542,10 @@ img {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
+}
+
+.catalog-item:hover,
+.catalog-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
