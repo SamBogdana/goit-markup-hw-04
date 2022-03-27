@@ -164,6 +164,8 @@ img {
 /* Main */
 
 .hero {
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: 200px;
   padding-top: 200px;
   text-align: center;
@@ -317,8 +319,8 @@ img {
 
 .social-list {
   display: flex;
-  padding: 0;
-  margin: 30px 32px 0 32px;
+  margin-top: 16px;
+  justify-content: center;
 }
 
 .social-link {
@@ -403,6 +405,7 @@ img {
 
 .footer > .container {
   display: flex;
+  align-items: baseline;
 }
 .footer-address > .logo {
   display: block;
@@ -433,10 +436,6 @@ img {
 
 .address-list {
   display: block;
-}
-
-.footer-social {
-  padding-top: 12px;
 }
 
 .footer-social-title {
@@ -544,8 +543,9 @@ img {
   letter-spacing: 0.03em;
 }
 
-.catalog-item:hover,
-.catalog-item:focus {
+.catalog-link:hover,
+.catalog-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  display: block;
 }
